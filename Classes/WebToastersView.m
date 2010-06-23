@@ -78,6 +78,9 @@ static NSString * const DefaultWebToaster = @"http://www.twistori.com/";
         }
     }
     
+    ScreenSaverDefaults *defaults = [ScreenSaverDefaults defaultsForModuleWithName:WebToastersModuleName];
+    [webpageUrl setStringValue:[defaults stringForKey:@"WebToaster"]];
+    
     return configSheet;
 }
 
