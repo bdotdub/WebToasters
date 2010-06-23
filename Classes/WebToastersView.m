@@ -21,10 +21,10 @@ static NSString * const DefaultWebToaster = @"http://www.twistori.com/";
     self = [super initWithFrame:frame isPreview:isPreview];
     if (self) {
         ScreenSaverDefaults *defaults;
-        
+
         defaults = [ScreenSaverDefaults defaultsForModuleWithName:WebToastersModuleName];
         [defaults registerDefaults:[NSDictionary dictionaryWithObjectsAndKeys:DefaultWebToaster, @"WebToaster", nil]];
-        
+
         [self setAnimationTimeInterval:1/30.0];
     }
     return self;
@@ -50,15 +50,15 @@ static NSString * const DefaultWebToaster = @"http://www.twistori.com/";
     WebView *webView;
     webView = [[WebView alloc] initWithFrame:[self frame]
                                    frameName:nil groupName: nil];
-    
+
     ScreenSaverDefaults *defaults = [ScreenSaverDefaults defaultsForModuleWithName:WebToastersModuleName];
     WebFrame *webFrame = [webView mainFrame];
     WebFrameView *webFrameView = [webFrame frameView];
     [webFrameView setAllowsScrolling:NO];
-    
+
     [webFrame loadRequest:[NSURLRequest
                            requestWithURL:[NSURL URLWithString:[defaults stringForKey:@"WebToaster"]]]];
-    
+
     [self addSubview:webView];
     [self stopAnimation];
     return;
@@ -77,10 +77,10 @@ static NSString * const DefaultWebToaster = @"http://www.twistori.com/";
             NSBeep(); // Just to be annoying
         }
     }
-    
+
     ScreenSaverDefaults *defaults = [ScreenSaverDefaults defaultsForModuleWithName:WebToastersModuleName];
     [webpageUrl setStringValue:[defaults stringForKey:@"WebToaster"]];
-    
+
     return configSheet;
 }
 
@@ -94,10 +94,10 @@ static NSString * const DefaultWebToaster = @"http://www.twistori.com/";
 - (IBAction)okClick:(id)sender {
     ScreenSaverDefaults *defaults;
     defaults = [ScreenSaverDefaults defaultsForModuleWithName:WebToastersModuleName];
-    
+
     [defaults setObject:[webpageUrl stringValue] forKey:@"WebToaster"];
     [defaults synchronize];
-    
+
     [[NSApplication sharedApplication] endSheet:configSheet];
 }
 

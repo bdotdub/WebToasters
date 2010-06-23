@@ -9,7 +9,7 @@
 #import <ScreenSaver/ScreenSaver.h>
 
 
-@interface WebToastersView : ScreenSaverView 
+@interface WebToastersView : ScreenSaverView
 {
     IBOutlet id configSheet;
     IBOutlet id webpageUrl;
