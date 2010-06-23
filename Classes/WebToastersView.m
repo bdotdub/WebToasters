@@ -50,17 +50,18 @@ static NSString * const DefaultWebToaster = @"http://www.twistori.com/";
     WebView *webView;
     webView = [[WebView alloc] initWithFrame:[self frame]
                                    frameName:nil groupName: nil];
-
-    ScreenSaverDefaults *defaults = [ScreenSaverDefaults defaultsForModuleWithName:WebToastersModuleName];
     WebFrame *webFrame = [webView mainFrame];
+
     WebFrameView *webFrameView = [webFrame frameView];
     [webFrameView setAllowsScrolling:NO];
 
+    ScreenSaverDefaults *defaults = [ScreenSaverDefaults defaultsForModuleWithName:WebToastersModuleName];
     [webFrame loadRequest:[NSURLRequest
                            requestWithURL:[NSURL URLWithString:[defaults stringForKey:@"WebToaster"]]]];
 
     [self addSubview:webView];
     [self stopAnimation];
+
     return;
 }
 
@@ -85,15 +86,14 @@ static NSString * const DefaultWebToaster = @"http://www.twistori.com/";
 }
 
 #pragma mark -
-#pragma mark ConfigureSheet buttons delegate
+#pragma mark ConfigureSheet buttons delegates
 
 - (IBAction)cancelClick:(id)sender {
     [[NSApplication sharedApplication] endSheet:configSheet];
 }
 
 - (IBAction)okClick:(id)sender {
-    ScreenSaverDefaults *defaults;
-    defaults = [ScreenSaverDefaults defaultsForModuleWithName:WebToastersModuleName];
+    ScreenSaverDefaults *defaults = [ScreenSaverDefaults defaultsForModuleWithName:WebToastersModuleName];
 
     [defaults setObject:[webpageUrl stringValue] forKey:@"WebToaster"];
     [defaults synchronize];
