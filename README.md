@@ -1,11 +1,11 @@
- ______________
-< Web Toasters >
- --------------
-        \   ^__^
-         \  (oo)\_______
-            (__)\       )\/\
-                ||----w |
-                ||     ||
+     ______________
+    < Web Toasters >
+     --------------
+            \   ^__^
+             \  (oo)\_______
+                (__)\       )\/\
+                    ||----w |
+                    ||     ||
 
 Web Toasters is a simple Mac OS X screensaver that will allow you to make any
 into a screensaver. Really, that's kind of it.
