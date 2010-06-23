@@ -33,6 +33,16 @@ From the zip file, double click to unzip it. And then double click on the
 "WebToasters.saver" file and it should install onto your computer
 
 
+To Change the Webpage
+---------------------
+
+Go to `System Preferences`, then `Desktop & Screen Saver`. In the
+`Screen Saver` tab, look for the `WebToasters` screensaver.
+
+Once you select it, you can click on the `Options` button to change the URL of
+the webpage that you want.
+
+
 --
 
 "I don't believe in much, but I do believe in duct tape"
