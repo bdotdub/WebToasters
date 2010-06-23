@@ -3,7 +3,7 @@
 //  WebToasters
 //
 //  Created by Benny Wong on 6/22/10.
-//  Copyright (c) 2010, __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2010, Seedless Media. All rights reserved.
 //
 
 #import <ScreenSaver/ScreenSaver.h>
