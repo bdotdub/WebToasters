@@ -11,14 +11,13 @@
 		1D15449D11D17A9700BF00D5 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D15449C11D17A9700BF00D5 /* WebKit.framework */; };
 		1D15457211D1898800BF00D5 /* WebToastersView.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D15457011D1898800BF00D5 /* WebToastersView.h */; };
 		1D15457311D1898800BF00D5 /* WebToastersView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D15457111D1898800BF00D5 /* WebToastersView.m */; };
+		1D7FAF2A11D9BF1E002B81BA /* ScreenSaver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D7FAF2911D9BF1E002B81BA /* ScreenSaver.framework */; };
 		8D255AC70486D3F9007BF209 /* WebToasters_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 32DBCFA80370C50100C91783 /* WebToasters_Prefix.pch */; };
 		8D255ACA0486D3F9007BF209 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C167DFE841241C02AAC07 /* InfoPlist.strings */; };
 		8D255ACE0486D3F9007BF209 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */; };
-		8D255ACF0486D3F9007BF209 /* ScreenSaver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06F27B2DFFEEEFEF11CA0E56 /* ScreenSaver.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		06F27B2DFFEEEFEF11CA0E56 /* ScreenSaver.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ScreenSaver.framework; path = /System/Library/Frameworks/ScreenSaver.framework; sourceTree = "<absolute>"; };
 		089C1672FE841209C02AAC07 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		089C167EFE841241C02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		089C167FFE841241C02AAC07 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
@@ -27,6 +26,7 @@
 		1D15449C11D17A9700BF00D5 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = /System/Library/Frameworks/WebKit.framework; sourceTree = "<absolute>"; };
 		1D15457011D1898800BF00D5 /* WebToastersView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WebToastersView.h; path = Classes/WebToastersView.h; sourceTree = "<group>"; };
 		1D15457111D1898800BF00D5 /* WebToastersView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WebToastersView.m; path = Classes/WebToastersView.m; sourceTree = "<group>"; };
+		1D7FAF2911D9BF1E002B81BA /* ScreenSaver.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ScreenSaver.framework; path = System/Library/Frameworks/ScreenSaver.framework; sourceTree = SDKROOT; };
 		32DBCFA80370C50100C91783 /* WebToasters_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebToasters_Prefix.pch; sourceTree = "<group>"; };
 		8D255AD20486D3F9007BF209 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		8D255AD30486D3F9007BF209 /* WebToasters.saver */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WebToasters.saver; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -38,8 +38,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D255ACE0486D3F9007BF209 /* Cocoa.framework in Frameworks */,
-				8D255ACF0486D3F9007BF209 /* ScreenSaver.framework in Frameworks */,
 				1D15449D11D17A9700BF00D5 /* WebKit.framework in Frameworks */,
+				1D7FAF2A11D9BF1E002B81BA /* ScreenSaver.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,7 +91,7 @@
 			children = (
 				1D15449C11D17A9700BF00D5 /* WebKit.framework */,
 				1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */,
-				06F27B2DFFEEEFEF11CA0E56 /* ScreenSaver.framework */,
+				1D7FAF2911D9BF1E002B81BA /* ScreenSaver.framework */,
 			);
 			name = "Linked Frameworks";
 			sourceTree = "<group>";
@@ -254,6 +254,7 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				GCC_C_LANGUAGE_STANDARD = c99;
+				"GCC_ENABLE_OBJC_GC[arch=*]" = unsupported;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -265,12 +266,13 @@
 		EF7AD73308BB986600CE4634 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				GCC_C_LANGUAGE_STANDARD = c99;
+				"GCC_ENABLE_OBJC_GC[sdk=macosx10.6][arch=*]" = required;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				PREBINDING = NO;
-				SDKROOT = macosx10.5;
+				SDKROOT = macosx10.6;
 			};
 			name = Release;
 		};
